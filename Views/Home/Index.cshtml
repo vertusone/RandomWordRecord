@@ -1,0 +1,26 @@
+﻿@model RandomWordRecord.Models.Record
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <form method="post" action="">
+        <div class="form-group">
+            <input class="form-control" name="Description" type="text" required/>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+    
+    <table>
+        @foreach (var r in ViewBag.Records)
+        {
+            <tr>
+                <td>
+                    <h4>@r.Description</h4>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
